@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>鲁总作品官网导航页</title>
+    <script src="https://cdn.tailwindcss.com/3.3.3"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            color: #212529;
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.1);
+            transition: all 0.3s ease;
+        }
+        .glass-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 28px 0 rgba(31, 38, 135, 0.15);
+        }
+        .nav-item {
+            transition: all 0.3s ease;
+        }
+        .nav-item:hover {
+            background-color: rgba(13, 110, 253, 0.1);
+        }
+        .gradient-text {
+            background: linear-gradient(135deg, #0d6efd 0%, #6610f2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+    <div class="container mx-auto px-4 py-12">
+        <!-- 头部 -->
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 gradient-text">鲁总作品官网导航</h1>
+            <p class="text-xl text-gray-600">专业设计作品展示平台</p>
+        </header>
+
+        <!-- 作品导航 -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+            <!-- 作品1 -->
+            <a href="https://www.zcool.com.cn/work/ZNjg3MjgxMTY=.html" target="_blank" class="glass-card p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-600 mr-4">
+                        <i class="fas fa-vacuum"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold">鲁总吸尘器作品</h2>
+                </div>
+                <p class="text-gray-600 mb-4">专业工业设计作品展示</p>
+                <div class="mt-auto">
+                    <span class="text-blue-500 hover:text-blue-700 transition-colors">查看作品 <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
+
+            <!-- 作品2 -->
+            <a href="https://www.zcool.com.cn/work/ZNjI3MzA0Mjg=.html" target="_blank" class="glass-card p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-600 mr-4">
+                        <i class="fas fa-filter"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold">鲁总过滤网作品</h2>
+                </div>
+                <p class="text-gray-600 mb-4">创新过滤系统设计展示</p>
+                <div class="mt-auto">
+                    <span class="text-purple-500 hover:text-purple-700 transition-colors">查看作品 <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
+
+            <!-- 作品3 -->
+            <a href="https://www.68design.net/work/800427" target="_blank" class="glass-card p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-green-100 flex items-center justify-center text-green-600 mr-4">
+                        <i class="fas fa-film"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold">鲁总产品宣传片制作</h2>
+                </div>
+                <p class="text-gray-600 mb-4">专业影视制作作品展示</p>
+                <div class="mt-auto">
+                    <span class="text-green-500 hover:text-green-700 transition-colors">查看作品 <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
+
+            <!-- 作品4 -->
+            <a href="https://www.68design.net/work/800425" target="_blank" class="glass-card p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-orange-100 flex items-center justify-center text-orange-600 mr-4">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold">鲁总车载吸尘器三维动画制作</h2>
+                </div>
+                <p class="text-gray-600 mb-4">3D动画与产品可视化展示</p>
+                <div class="mt-auto">
+                    <span class="text-orange-500 hover:text-orange-700 transition-colors">查看作品 <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
+        </div>
+
+        <!-- 页脚 -->
+        <footer class="mt-16 text-center text-gray-500 text-sm">
+
+        </footer>
+    </div>
+
+    <script>
+        // 导航项悬停效果
+        document.querySelectorAll('.glass-card').forEach(card => {
+            card.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-arrow-right')) {
+                    icon.classList.add('animate-pulse');
+                }
+            });
+            card.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('i');
+                if (icon.classList.contains('fa-arrow-right')) {
+                    icon.classList.remove('animate-pulse');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
