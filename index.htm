@@ -35,6 +35,13 @@
             background-clip: text;
             color: transparent;
         }
+        .animate-pulse {
+            animation: pulse 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
 </head>
 <body class="min-h-screen">
@@ -46,7 +53,7 @@
         </header>
 
         <!-- 作品导航 -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
             <!-- 作品1 -->
             <a href="https://www.zcool.com.cn/work/ZNjg3MjgxMTY=.html" target="_blank" class="glass-card p-6 flex flex-col">
                 <div class="flex items-center mb-4">
@@ -102,6 +109,34 @@
                     <span class="text-orange-500 hover:text-orange-700 transition-colors">查看作品 <i class="fas fa-arrow-right ml-1"></i></span>
                 </div>
             </a>
+
+            <!-- 新增作品5 -->
+            <a href="https://www.bilibili.com/video/BV1ai4y1P7wq/?vd_source=abe6fce3f57e6858e99c647b38c3a19d" target="_blank" class="glass-card p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-red-100 flex items-center justify-center text-red-600 mr-4">
+                        <i class="fas fa-cubes"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold">C4D场景渲染</h2>
+                </div>
+                <p class="text-gray-600 mb-4">专业3D场景渲染技术展示</p>
+                <div class="mt-auto">
+                    <span class="text-red-500 hover:text-red-700 transition-colors">查看作品 <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
+
+            <!-- 新增作品6 -->
+            <a href="https://www.bilibili.com/video/BV1oQ4y167QW/" target="_blank" class="glass-card p-6 flex flex-col">
+                <div class="flex items-center mb-4">
+                    <div class="w-12 h-12 rounded-full bg-indigo-100 flex items-center justify-center text-indigo-600 mr-4">
+                        <i class="fas fa-chalkboard-teacher"></i>
+                    </div>
+                    <h2 class="text-xl font-semibold">鲁总课堂</h2>
+                </div>
+                <p class="text-gray-600 mb-4">专业设计教学视频课程</p>
+                <div class="mt-auto">
+                    <span class="text-indigo-500 hover:text-indigo-700 transition-colors">查看课程 <i class="fas fa-arrow-right ml-1"></i></span>
+                </div>
+            </a>
         </div>
 
         <!-- 页脚 -->
@@ -114,14 +149,14 @@
         // 导航项悬停效果
         document.querySelectorAll('.glass-card').forEach(card => {
             card.addEventListener('mouseenter', function() {
-                const icon = this.querySelector('i');
-                if (icon.classList.contains('fa-arrow-right')) {
+                const icon = this.querySelector('i.fa-arrow-right');
+                if (icon) {
                     icon.classList.add('animate-pulse');
                 }
             });
             card.addEventListener('mouseleave', function() {
-                const icon = this.querySelector('i');
-                if (icon.classList.contains('fa-arrow-right')) {
+                const icon = this.querySelector('i.fa-arrow-right');
+                if (icon) {
                     icon.classList.remove('animate-pulse');
                 }
             });
